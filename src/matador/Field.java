@@ -10,5 +10,24 @@ package matador;
  * @author Bruger
  */
 public class Field {
+    private String name;
+    private int number;
     
+    Field(String name, int number){
+        this.name = name;
+        this.number = number;
+        
+    }
+    
+    public String getName(){
+        return this.name;
+    }
+    
+    public int getNumber(){
+        return this.number;
+    }
+    
+    public String toString(){
+        return "name: " + name + " number: " + number;
+    }
 }
