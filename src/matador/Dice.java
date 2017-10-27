@@ -24,11 +24,7 @@ public class Dice {
     }
     
     public Boolean dicePair(){
-    if(this.eyes1 == this.eyes2){
-        System.out.println("You rolled a pair. You may roll again");
-    return true;
-    }else 
-        return false;
+    return this.eyes1 == this.eyes2;
     }
     
     

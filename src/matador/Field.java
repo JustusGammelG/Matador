@@ -27,7 +27,8 @@ public class Field {
         return this.number;
     }
     
+    @Override
     public String toString(){
-        return "name: " + name + " number: " + number;
+        return "Name: " + name + " number: " + number;
     }
 }

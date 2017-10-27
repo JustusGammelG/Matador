@@ -9,27 +9,43 @@ package matador;
  *
  * @author Justus
  */
+import java.util.Arrays;
+
 public class Matador {
     public static Field[] fieldArray = new Field[40];
     
-    public static void main(String[] args) {
-        Dice dice = new Dice();
+    private Dice dice = new Dice();
+    
+    public void fillBoard(){
+        for(int i = 0; i <= 39; i++){
+            fieldArray[i] = new Field("Field" + (i + i), i + 1);
+            }
+            System.out.print( "Board" + Arrays.toString(fieldArray));
+        }
+    
+    public void play(){
+        Player p1 = new Player("John");
+        Player p2 = new Player("Hans");
         
-        for(int i = 0; i <= 40; i++){
-            fieldArray[i] = new Field("Field" + i, i);
-        
-        Player John = new Player("John");
-        Player Jens = new Player("Jens");
-        
-            System.out.println(John + " is player one");
-            System.out.println(Jens + " is player two");
-        
-            
-            System.out.println("Player one's turn. Roll you dice ");
-            John.move(dice);
+        for(int i = 0; i < 20; i++){
+            p1.move(dice);
+            p2.move(dice);
         }
     }
     
-    
-    
-}
+    public static void main(String[] args) {
+        
+        Matador driver = new Matador();
+        
+        driver.fillBoard();
+        
+        driver.play();
+        
+        
+        
+        
+        
+            
+        }
+    }   
+
