@@ -9,9 +9,12 @@ package matador;
  *
  * @author Bruger
  */
+import java.util.ArrayList;
 public class Player {
     private String name;
     private Field currentField;
+    private ArrayList<OwnableField> ownsList = new ArrayList<>();
+    private int money = MatadorConstants.START_MONEY;
     
     
     Player(String name){
@@ -21,6 +24,16 @@ public class Player {
     public String getName(){
           return this.name;
         }
+    
+    public void buy(OwnableField ownableField){
+        pay(ownableField.getPrice());
+        this.ownsList.add(ownableField);
+                
+    }
+    
+    public void pay(int payment){
+        this.money = this.money - payment;
+    }
     
     
     public void move(Dice dice){
